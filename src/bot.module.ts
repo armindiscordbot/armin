@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { DiscordModule } from 'discord-nestjs';
 import { BotService } from './bot.service';
 
@@ -6,10 +7,11 @@ import { BotService } from './bot.service';
   imports: [
     DiscordModule.forRootAsync({
       useFactory: () => ({
-        token: 'ODg5MTk1OTA2MjI0Nzc1MTY4.YUduOA.ipCanMSwbt5DdxJlzIApGq1ZLlI',
+        token: process.env.DISCORD_TOKEN,
         commandPrefix: '!',
       }),
     }),
+    ConfigModule.forRoot(),
   ],
   providers: [BotService],
 })
