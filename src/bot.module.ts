@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { DiscordModule } from 'discord-nestjs';
+import { BotController } from './bot.controller';
 import { BotService } from './bot.service';
 
 @Module({
@@ -13,6 +14,7 @@ import { BotService } from './bot.service';
     }),
     ConfigModule.forRoot(),
   ],
+  controllers: [BotController],
   providers: [BotService],
 })
 export class BotModule {}
