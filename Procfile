@@ -1,1 +1,2 @@
-web: npm run start:prod
+web: echo "I don't want a web process"
+service: npm run start:prod
