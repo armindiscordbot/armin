@@ -1,2 +1,1 @@
-web: echo "I don't want a web process"
-service: npm run start:prod
+worker: node dist/main.js
